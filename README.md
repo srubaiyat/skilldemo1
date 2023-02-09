@@ -20,13 +20,17 @@ git clone https://github.com/ucsd-cse15l-w23/skill-demo1-data
 
 cd skill-demo1-data
 
-git clone https://github.com/srubaiyat/skilldemo1.git
-
-bash skilldemo1/count-txts.sh written_2/
+find written_2 > find-results.txt
+grep ".txt" find-results.txt > grep-results.txt
+wc grep-results.txt
 
 xargs grep "Lucayans" < grep-results.txt
 
 cd ../skill-demo1-server
 
-java FileServer __port__ ../skill-demo1-data/written_2
+java FileServer __port__ ../skill-demo1-data/
+
+ieng6-202@ucsd.edu:__port__/search?q=Bahamas-History.txt
+
+ieng6-202@ucsd.edu:__port__/search?q=ch1.txt
 
